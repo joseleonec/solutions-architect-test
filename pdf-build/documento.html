@@ -1,0 +1,322 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>BP Sistema de Banca por Internet</title><style>
+@page { size: A4; margin: 0 }
+@page land { size: A4 landscape; margin: 0 }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:'Segoe UI',Arial,Helvetica,sans-serif;color:#1c2430;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{position:relative;overflow:hidden;break-after:page;background:#fff}
+.p{width:210mm;height:297mm;padding:13mm 14mm 15mm 14mm}
+.l{page:land;width:297mm;height:210mm;padding:8mm 9mm 9mm 9mm}
+.foot{position:absolute;left:14mm;right:14mm;bottom:5mm;font-size:6.8pt;color:#6b7785;display:flex;justify-content:space-between;border-top:.3mm solid #d5dbe3;padding-top:1.2mm}
+.l .foot{left:9mm;right:9mm;bottom:3.5mm}
+h1{font-size:21pt;margin:0 0 1mm;color:#fff;line-height:1.1}
+h2{font-size:14pt;color:#08427b;margin:0 0 2.5mm;padding-bottom:1.2mm;border-bottom:.6mm solid #1168bd}
+h3{font-size:9.6pt;color:#08427b;margin:3mm 0 1mm}
+h4{font-size:8.6pt;margin:2mm 0 .6mm;color:#1c2430}
+p{margin:0 0 1.6mm;font-size:8.7pt;line-height:1.34}
+ul,ol{margin:0 0 1.6mm;padding-left:4.4mm;font-size:8.7pt;line-height:1.32}
+li{margin:0 0 .5mm}
+.cols{column-count:2;column-gap:7mm;column-fill:balance;margin-bottom:3mm}
+.cols h3{break-after:avoid}
+.cols p,.cols li{break-inside:avoid-column}
+.nb{break-inside:avoid}
+table{border-collapse:collapse;width:100%;margin:0 0 2mm;font-size:7.5pt;line-height:1.25}
+th{background:#08427b;color:#fff;text-align:left;padding:1.1mm 1.5mm;font-weight:600}
+td{border-bottom:.25mm solid #d5dbe3;padding:1mm 1.5mm;vertical-align:top}
+tr:nth-child(even) td{background:#f4f7fb}
+.dt td,.dt th{font-size:7pt;padding:.8mm 1.2mm}
+.band{background:#08427b;color:#fff;margin:-13mm -14mm 3mm -14mm;padding:7mm 14mm 4mm 14mm}
+.band .k{font-size:8pt;letter-spacing:.12em;text-transform:uppercase;opacity:.85;margin-bottom:2mm}
+.band .s{font-size:11pt;opacity:.95;margin-top:1mm}
+.band .m{font-size:8.5pt;opacity:.8;margin-top:3mm}
+.tiles{display:flex;gap:3mm;margin:1mm 0 2mm}
+.tile{flex:1;background:#eef4fb;border-left:1.2mm solid #1168bd;padding:1.2mm 2.2mm}
+.tile b{display:block;font-size:12pt;color:#08427b}
+.tile span{font-size:7.3pt;color:#3c4a5c}
+.l{display:flex;flex-direction:column}
+.figbox{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;gap:4mm}
+.figbox img{width:100%;height:100%;object-fit:contain}
+.row{display:flex;gap:4mm;flex:1;min-height:0}
+.aside{width:66mm;flex:none;display:flex;flex-direction:column}
+.aside .guide{margin-top:2mm;font-size:8pt}
+.figbox.tl{align-items:flex-start}
+.two{flex:1;min-width:0;height:100%;display:flex;flex-direction:column}
+.two img{flex:1;min-height:0;width:100%;height:100%;object-fit:contain}
+.big p,.big li{font-size:9.6pt;line-height:1.38}
+.big td,.big th{font-size:8.3pt}
+.xl td,.xl th{font-size:8.4pt;padding:1.7mm 1.7mm}
+.figtitle{font-size:12pt;color:#08427b;font-weight:700;margin:0 0 1.5mm}
+.fig{display:block;width:100%;object-fit:contain}
+.guide{font-size:8.2pt;line-height:1.3;background:#f4f7fb;border-left:1.2mm solid #1168bd;padding:1.6mm 2.4mm;margin-top:1.5mm}
+.note{font-size:7.4pt;color:#4a5665}
+.tag{display:inline-block;background:#e3edf9;color:#08427b;border-radius:1mm;padding:0 1.2mm;font-size:7pt;font-weight:600}
+.warn{background:#fff6e0;border-left:1.2mm solid #d99a00;padding:1.4mm 2.2mm;font-size:7.6pt;margin:1.5mm 0}
+</style></head><body><section class="page p " data-n="1">
+<div class="band">
+ <div class="k">Prueba técnica · Arquitecto de Soluciones</div>
+ <h1>Sistema de Banca por Internet · BP</h1>
+ <div class="s">Diseño de arquitectura de soluciones con el modelo C4</div>
+ <div class="m">Septiembre 2026 · Nube: Microsoft Azure · Documento de 15 páginas</div>
+ <div class="m" style="margin-top:1.2mm;opacity:.95">José Luis León · joleonca@gmail.com</div>
+</div>
+<h2>Resumen ejecutivo</h2>
+<h3 style="margin-top:0">El problema y por qué este proyecto</h3>
+<p>Hoy los clientes esperan resolver sus operaciones bancarias desde el celular o la computadora, a cualquier hora y sin ir a una agencia. BP necesita ofrecer ese servicio de forma segura, cumpliendo la norma y aprovechando los sistemas que ya tiene.</p>
+<ul>
+<li><b>Servicio a cualquier hora.</b> El cliente consulta, transfiere y paga por su cuenta, sin filas ni horarios de agencia.</li>
+<li><b>Clientes nuevos a distancia.</b> Abrir la cuenta desde el celular llega a más personas sin abrir más agencias.</li>
+<li><b>Cumplimiento y confianza.</b> La norma exige avisar cada movimiento y guardar un registro confiable de lo que ocurre; un canal propio lo hace siempre de la misma forma.</li>
+<li><b>Base para crecer.</b> Lo que se construye se reutiliza en nuevos productos, y la inversión aumenta solo si los clientes lo usan.</li>
+</ul>
+<p class="note">Beneficios cualitativos: sus cifras (ahorro por operación, altas nuevas) se definen con BP. El enunciado no describe el canal digital actual, por lo que esta sección debe validarse con el patrocinador.</p>
+<h3>Necesidades del negocio y requisitos planteados</h3>
+<table class="dt">
+<tr><th style="width:27%">Necesidad del negocio</th><th>Qué se espera</th></tr>
+<tr><td><b>Autoservicio seguro</b></td><td>Consultar y mover el dinero por cuenta propia, a cualquier hora, con la seguridad de un banco.</td></tr>
+<tr><td><b>Clientes nuevos sin agencia</b></td><td>Abrir una cuenta desde el celular con foto del rostro y cédula, con identidad verificada.</td></tr>
+<tr><td><b>Aprovechar lo que BP ya tiene</b></td><td>Usar la plataforma central, el sistema de datos adicionales y el inicio de sesión corporativo.</td></tr>
+<tr><td><b>Avisar cada movimiento</b></td><td>Informar al cliente por al menos dos medios, como exige la norma.</td></tr>
+<tr><td><b>Trazabilidad y cumplimiento</b></td><td>Registrar todo lo que hace el cliente y cumplir las normas de datos, seguridad y lavado de activos.</td></tr>
+<tr><td><b>Servicio siempre disponible</b></td><td>Que no se caiga, se recupere de un desastre y se vigile, con buena rapidez.</td></tr>
+</table>
+<p><b>Requisitos planteados.</b> Aplicación web y móvil; consulta de movimientos; transferencias y pagos propios e interbancarios; alta con reconocimiento facial; ingreso con el inicio de sesión de la empresa; avisos por dos medios; registro de todas las acciones; ágil para clientes frecuentes; integración ampliable; normativa; disponibilidad y monitoreo; nube con presupuesto; documento con diagramas y justificaciones.</p>
+<h3>Qué se propone</h3>
+<p>Una banca por internet para BP, en la web y en una aplicación para el celular. Los clientes consultan saldos y movimientos, transfieren dinero entre sus cuentas y a otros bancos, y reciben un aviso por mensaje de texto y por correo en cada movimiento. Quien aún no es cliente abre su cuenta desde el celular con su cédula y una foto de su rostro tomada en el momento. Para entrar usa su huella o su clave, apoyándose en el inicio de sesión que BP ya tiene. Cada acción queda registrada de forma que nadie pueda alterarla, y el sistema sigue funcionando aunque una parte de la infraestructura falle. Se construye en cuatro etapas, cada una con prueba de demanda.</p>
+<h3>Decisiones clave <span class="note" style="font-weight:400">(detalle técnico en las págs. 3 a 8)</span></h3>
+<table class="dt">
+<tr><th style="width:16%">Tema</th><th style="width:46%">Decisión</th><th>Por qué</th></tr>
+<tr><td><b>Nube y regiones</b></td><td>Azure: South Central US (3 zonas) y recuperación en North Central US</td><td>Menor latencia medida desde Ecuador (103 y 104 ms)</td></tr>
+<tr><td><b>Web y móvil</b></td><td>Angular con BFF para la web; Flutter para iOS y Android</td><td>Tokens fuera del navegador; una base de código móvil</td></tr>
+<tr><td><b>Autenticación</b></td><td>Código de autorización con PKCE; llave del dispositivo con huella</td><td>Estándar vigente; la biometría no sale del teléfono</td></tr>
+<tr><td><b>Integración</b></td><td>API Gateway, microservicios y eventos en Azure Service Bus</td><td>Desacople y tolerancia a fallas</td></tr>
+<tr><td><b>Datos y auditoría</b></td><td>Una base por servicio; libro mayor de solo anexar y archivo inmutable</td><td>Autonomía y evidencia para el regulador</td></tr>
+<tr><td><b>Resiliencia</b></td><td>Tres zonas y región de recuperación en espera</td><td>99,95 %, RPO ≤ 5 min, RTO ≤ 1 h</td></tr>
+</table>
+<div class="tiles">
+ <div class="tile"><b>99,95 %</b><span>disponibilidad objetivo</span></div>
+ <div class="tile"><b>≤ 5 min</b><span>pérdida máxima de datos</span></div>
+ <div class="tile"><b>≤ 1 h</b><span>tiempo de recuperación</span></div>
+ <div class="tile"><b>103 ms</b><span>latencia medida</span></div>
+</div>
+<p><b>Costo y plan.</b> Estimación con precios de lista de Azure: de US$ 0,5 a 1,5 mil por mes en la etapa de pretotipo y de US$ 32 a 46 mil por mes con todo el diseño (unos US$ 0,11 a 0,15 por usuario activo mensual, con 300 000 usuarios activos al mes). Más de la mitad son precios ya verificados; el resto (SMS, verificación de identidad, tráfico) son estimaciones por cotizar, y el costo de los SMS depende de cuántos movimientos generen un mensaje (pág. 12 y 13).</p>
+<p class="note"><b>Cómo leer este documento.</b> Pág. 2: alcance. Pág. 3 a 8: diagramas. Pág. 9 a 13: procesos y temas transversales. Pág. 14 y 15: decisiones.</p>
+<div class="foot"><span>BP · Sistema de Banca por Internet · Portada y resumen ejecutivo</span><span>1 / 15</span></div></section><section class="page p big" data-n="2">
+<h2>Alcance, procesos de negocio y supuestos</h2>
+<table>
+<tr><th style="width:23%">Proceso de negocio</th><th>Qué logra el cliente o el banco</th><th style="width:19%">Decisiones</th></tr>
+<tr><td><b>Onboarding</b></td><td>Abrir una cuenta desde el móvil con cédula, selfie en vivo y código dactilar</td><td>D5, D6, D19</td></tr>
+<tr><td><b>Autenticación</b> (Web SPA y Mobile App)</td><td>Ingresar de forma segura con huella o con usuario y clave más segundo factor</td><td>D2, D3, D4, D6</td></tr>
+<tr><td><b>Consulta de datos y movimientos</b></td><td>Ver saldos e histórico de movimientos, con respuesta rápida incluso para clientes frecuentes</td><td>D8, D12, D13</td></tr>
+<tr><td><b>Transferencias internas</b></td><td>Mover dinero entre sus propias cuentas al instante</td><td>D10</td></tr>
+<tr><td><b>Transferencias interbancarias</b></td><td>Enviar dinero a otros bancos con estados claros y sin pagos duplicados</td><td>D10, D14</td></tr>
+<tr><td><b>Auditoría</b></td><td>Registro inmutable de cada acción, útil para reguladores y disputas</td><td>D11</td></tr>
+<tr><td><b>Notificaciones</b></td><td>Aviso de cada movimiento por SMS y correo, como exige la norma</td><td>D9, D14</td></tr>
+</table>
+<p class="note">Transversales: seguridad (OWASP, WAF), regulaciones (protección de datos), resiliencia y monitoreo, costos y plan de entregas. Los pagos entre cuentas propias e interbancarias se tratan dentro de las transferencias.</p>
+<h3>Índice de requisitos y decisiones</h3>
+<table class="dt">
+<tr><th style="width:56%">Requisito</th><th>Dónde</th></tr>
+<tr><td>Datos del Core y de un sistema complementario; capa de integración con API Gateway y los tres servicios iniciales</td><td>Pág. 4 y 10 (D7, D8, D12)</td></tr>
+<tr><td>Al menos dos sistemas de notificación</td><td>Pág. 11 (D14)</td></tr>
+<tr><td>SPA y app móvil multiplataforma, con dos opciones y justificación</td><td>Pág. 9 y 14 (D2, D3)</td></tr>
+<tr><td>OAuth 2.0 y mejor flujo de autenticación; método de ingreso tras el onboarding</td><td>Pág. 9 (D4, D6)</td></tr>
+<tr><td>Onboarding con reconocimiento facial dentro del flujo de autorización</td><td>Pág. 6 y 9 (D5)</td></tr>
+<tr><td>Base de auditoría y persistencia para clientes frecuentes con patrones de diseño</td><td>Pág. 7, 10 y 11 (D11, D12)</td></tr>
+<tr><td>Normativa financiera y de datos personales</td><td>Pág. 12 (D19)</td></tr>
+<tr><td>Alta disponibilidad, tolerancia a fallas, DR, seguridad, monitoreo, auto-reparación, baja latencia</td><td>Pág. 8 y 12 (D15 a D17)</td></tr>
+<tr><td>Nube (Azure o AWS) y presupuesto</td><td>Pág. 8 y 12 (D1, D18)</td></tr>
+<tr><td>Arquitectura desacoplada y reutilizable; modelo C4 hasta componentes; decisiones justificadas</td><td>Pág. 3 a 7 y 14 a 15</td></tr>
+</table>
+<h3>Supuestos</h3>
+<ul>
+<li><b>País y regulación:</b> Ecuador. No hay región de nube local, por eso se midió la latencia y se justifican las regiones (pág. 8). El alojamiento fuera del país es una transferencia internacional de datos personales que exige consentimiento, cláusulas contractuales y registro; <b>debe confirmarse con Legal</b> (pág. 12).</li>
+<li><b>Tamaño:</b> banco mediano: 1 millón de clientes, <b>300 000 usuarios activos al mes</b>, 60 000 por día, 40 000 transferencias por día (≈ 1,2 millones de movimientos al mes) y pico de 5 transferencias por segundo.</li>
+<li><b>Sistemas de BP:</b> el Core expone REST; el Core, el sistema de detalle y el servidor de autorización están en un centro de datos de BP conectado por circuito privado (ubicación por confirmar). El servidor OAuth 2.0 corporativo soporta PKCE y aprovisionamiento por API.</li>
+<li><b>Fuera de alcance:</b> tarjetas y pagos con tarjeta (por eso no se exige PCI DSS). Notificaciones push: diferidas a una etapa posterior.</li>
+<li><b>Metas de calidad:</b> disponibilidad 99,95 %, RPO ≤ 5 min, RTO ≤ 1 h, lectura p95 menor a 500 ms dentro de la región más la latencia de red (≈ 103 ms).</li>
+<li><b>Precios y leyes:</b> los precios son de lista y las normas citadas se resumen de fuentes públicas; ambos deben validarse antes de decidir.</li>
+</ul>
+<div class="foot"><span>BP · Sistema de Banca por Internet · Alcance y supuestos</span><span>2 / 15</span></div></section><section class="page l" data-n="3"><div class="figtitle">C4 nivel 1 · Contexto del sistema</div><div class="figbox"><img src="svg/01-context.svg"></div><div class="guide"><b>Cómo leerlo.</b> Las personas (azul oscuro) usan BP Internet Banking (azul intenso). El sistema se apoya en tres sistemas internos de BP (Core, detalle del cliente y servidor de autorización) y en seis servicios externos: verificación de identidad, registro civil, screening de sanciones, red interbancaria, proveedores de SMS y correo, y autoridades. Cada flecha dice para qué se usa. No hay tecnología en este nivel a propósito.</div><div class="foot"><span>BP · Sistema de Banca por Internet · Modelo C4</span><span>3 / 15</span></div></section><section class="page l" data-n="4"><div class="row"><div class="aside"><div class="figtitle">C4 nivel 2 · Contenedores (vista lógica)</div><div class="guide"><b>Cómo leerlo.</b> La SPA (a través del BFF) y la app móvil entran por el API Gateway, incluido aquí porque el enunciado lo exige como capa de integración. Ocho microservicios tienen cada uno su almacén de datos (base por servicio).<br><br>Los eventos viajan por temas de Service Bus (cápsulas azules, línea punteada): quien publica no conoce a quien escucha.<br><br><b>Colores:</b> azul oscuro, personas; azul, contenedores y sistemas de BP; azul intenso, componentes gestionados de Azure; gris violeta, sistemas externos. Línea gris: llamada síncrona; punteada azul: evento; naranja: sistema externo; verde: autenticación.<br><br>Regiones, zonas, borde y clústeres no se mezclan aquí: están en el diagrama de despliegue (pág. 8).</div></div><div class="figbox"><img src="svg/02-container.svg"></div></div><div class="foot"><span>BP · Sistema de Banca por Internet · Modelo C4</span><span>4 / 15</span></div></section><section class="page l" data-n="5"><div class="figtitle">C4 nivel 3 · Componentes: Servicio de Transferencias y Pagos</div><div class="figbox"><img src="svg/03a-transfers.svg"></div><div class="guide"><b>Cómo leerlo.</b> Tres capas. <b>API:</b> filtro de autorización (alcance y nivel de aseguramiento, con paso adicional para montos altos o beneficiarios nuevos) e idempotencia. <b>Negocio:</b> saga orquestada con compensaciones y conciliación. <b>Integración y datos:</b> repositorio con <i>outbox</i> transaccional y adaptadores anti-corrupción hacia el Core y la red interbancaria, con reintentos, corte de circuito y aislamiento. Seguridad: JWT validado en el gateway, mTLS entre servicios, endpoints privados y sin secretos en el código.</div><div class="foot"><span>BP · Sistema de Banca por Internet · Modelo C4</span><span>5 / 15</span></div></section><section class="page l" data-n="6"><div class="figtitle">C4 nivel 3 · Componentes: Servicio de Onboarding</div><div class="figbox"><img src="svg/03d-onboarding.svg"></div><div class="guide"><b>Cómo leerlo.</b> El resultado de la verificación nunca se confía a la app: llega por un webhook firmado del proveedor y se combina con la validación del registro civil (foto y código dactilar) y el screening de sanciones. Una máquina de estados decide aprobar, revisar o rechazar; si se aprueba, el cliente se crea en el servidor de autorización con nivel de identidad verificado. La atestación del dispositivo bloquea emuladores y apps alteradas antes de capturar datos.</div><div class="foot"><span>BP · Sistema de Banca por Internet · Modelo C4</span><span>6 / 15</span></div></section><section class="page l" data-n="7"><div class="figtitle">C4 nivel 3 · Componentes: Movimientos y Cliente frecuente</div><div class="figbox tl"><div class="two"><div class="note" style="margin-bottom:1mm"><b>Servicio de Movimientos (lectura)</b></div><img src="svg/03b-movements.svg"></div><div class="two"><div class="note" style="margin-bottom:1mm"><b>Servicio de Cliente frecuente</b></div><img src="svg/03c-frequent.svg"></div></div><div class="guide"><b>Cómo leerlo.</b> Mecanismo de persistencia para clientes frecuentes con patrones: <i>Cache-Aside</i> (caché, luego modelo de lectura, luego Core), <i>CQRS</i> de lectura con vista materializada en Cosmos DB y clasificación por eventos. El Servicio de Cliente frecuente solo cuenta actividad y anuncia cambios; el de Movimientos actualiza su propio modelo y precalienta su caché. El Core sigue siendo la fuente de verdad.</div><div class="foot"><span>BP · Sistema de Banca por Internet · Modelo C4</span><span>7 / 15</span></div></section><section class="page l" data-n="8"><div class="figtitle">Despliegue e infraestructura · Alta disponibilidad y recuperación ante desastres</div><div class="figbox"><img src="svg/04-deployment.svg"></div><div class="guide"><b>Cómo leerlo.</b> Front Door con WAF protege el borde y conmuta hacia la región de recuperación si fallan las pruebas de salud. La región primaria usa tres zonas de disponibilidad (gateway, clúster de contenedores y datos zona-redundantes). North Central US, su pareja oficial, recibe replicación continua (SQL con grupo de conmutación, Cosmos DB, Redis, Service Bus, almacenamiento inmutable, llaves) y funciona como espera en caliente. Esa región no ofrece zonas: es un riesgo aceptado y documentado (pág. 13). Supuesto: el Core está en un centro de datos de BP conectado por ExpressRoute con VPN de respaldo.</div><div class="foot"><span>BP · Sistema de Banca por Internet · Infraestructura</span><span>8 / 15</span></div></section><section class="page p " data-n="9">
+<h2>Procesos: Onboarding y Autenticación</h2>
+<div class="cols">
+<h3>Onboarding (D5, D6)</h3>
+<p>El cliente nuevo abre su cuenta desde el móvil con la cédula, un selfie en vivo y su código dactilar. Un proveedor especializado comprueba que es una persona real y que coincide con el documento. Aporta rapidez sin ir a una agencia y la evidencia de identidad que piden las normas contra el lavado de activos.</p>
+<ol>
+<li>El cliente acepta términos y consentimiento; la app prueba que el dispositivo es legítimo (atestación).</li>
+<li>El Servicio de Onboarding crea una sesión de verificación; el SDK del proveedor captura documento, selfie con prueba de vida y código dactilar.</li>
+<li>El proveedor responde con un webhook firmado. Nada se acepta de la app.</li>
+<li>Se valida con el registro civil (datos, foto, código dactilar) y con listas de sanciones y duplicados.</li>
+<li>Aprobado: se crea el usuario en el servidor de autorización con nivel de identidad verificado. Dudoso: cola de revisión manual. Rechazado: mensaje seguro y reintentos limitados.</li>
+<li>El cliente define su clave y registra su dispositivo. Los primeros días tienen límites reducidos.</li>
+</ol>
+<p>El rostro sirve para probar identidad al inicio y para recuperar cuentas o reemplazar el dispositivo, no en cada ingreso. Los datos biométricos son sensibles (LOPDP): consentimiento explícito, mínimo de datos, retención corta y control de la transferencia al proveedor.</p>
+<h3>Autenticación (D2, D3, D4, D6)</h3>
+<p><b>Web SPA.</b> Angular con un BFF que ejecuta el inicio de sesión y guarda los tokens en el servidor. El navegador solo tiene una cookie HttpOnly: un script malicioso no puede robar tokens.</p>
+<p><b>Mobile App.</b> Flutter con el navegador del sistema (nunca un WebView), PKCE y enlaces HTTPS verificados. Una llave privada guardada en hardware seguro se desbloquea con la huella; el servidor solo conoce la llave pública. Respaldo: clave más OTP de una app (TOTP).</p>
+<p><b>Mejor flujo según el estándar:</b> <b>código de autorización con PKCE (S256)</b>, solicitudes de autorización empujadas (PAR) y tokens de vida corta con rotación del refresh token, siguiendo el perfil FAPI 2.0 donde el servidor lo soporte.</p>
+</div>
+<table class="dt">
+<tr><th style="width:24%">Flujo evaluado</th><th style="width:15%">Veredicto</th><th>Motivo</th></tr>
+<tr><td>Código de autorización + PKCE</td><td><b>Elegido</b></td><td>Práctica actual para clientes públicos; evita la intercepción del código; el usuario nunca escribe su clave en la app</td></tr>
+<tr><td>Implícito</td><td>Descartado</td><td>Tokens visibles en la URL y el historial; retirado en OAuth 2.1</td></tr>
+<tr><td>Contraseña del propietario del recurso</td><td>Descartado</td><td>La app manejaría la clave; rompe MFA y controles de riesgo</td></tr>
+<tr><td>Credenciales de cliente</td><td>Solo servicio a servicio</td><td>No hay usuario involucrado</td></tr>
+</table>
+<table class="dt">
+<tr><th style="width:52%">Acción del cliente</th><th>Aseguramiento requerido</th></tr>
+<tr><td>Ver saldos y movimientos; transferir entre cuentas propias</td><td>Llave del dispositivo con huella</td></tr>
+<tr><td>Transferir a un beneficiario registrado bajo el umbral</td><td>Llave del dispositivo con huella</td></tr>
+<tr><td>Monto sobre el umbral o beneficiario nuevo</td><td>Llave del dispositivo más segundo factor (OTP de app) y periodo de espera para beneficiarios nuevos</td></tr>
+<tr><td>Cambiar dispositivo, clave o contacto; recuperar cuenta</td><td>Clave más OTP y reverificación facial con prueba de vida; alerta al cliente</td></tr>
+</table>
+<p class="note"><b>Flutter frente a React Native (D3).</b> Flutter: interfaz y rendimiento idénticos en iOS y Android, buen soporte de almacenamiento seguro, biometría y pinning, una sola base de código. React Native queda como alternativa válida si el equipo es de JavaScript. Diagrama dinámico del inicio de sesión: en el repositorio.</p>
+<img class="fig" style="height:88mm;margin-top:1mm" src="svg/05b-dynamic-onboarding.svg">
+<div class="note"><b>Diagrama dinámico del onboarding</b>: pasos numerados en orden; el resultado del proveedor llega por webhook firmado.</div>
+<div class="foot"><span>BP · Sistema de Banca por Internet · Procesos: Onboarding y Autenticación</span><span>9 / 15</span></div></section><section class="page p " data-n="10">
+<h2>Procesos: Consulta de datos y Transferencias</h2>
+<div class="cols">
+<h3>Consulta de datos y movimientos (D8, D12, D13)</h3>
+<p>El cliente ve saldos y movimientos rápido, incluso con 100 ms de red hacia la nube. Los clientes que más usan la app reciben una experiencia aún más ágil porque sus datos recientes ya están preparados.</p>
+<p>Los servicios de <b>Perfil</b> y <b>Movimientos</b> leen el Core y, cuando hace falta detalle, el sistema complementario, siempre a través de adaptadores que aíslan a BP de sus cambios. Para los <b>clientes frecuentes</b> se combinan cuatro patrones (pág. 7):</p>
+<ul>
+<li><b>Clasificador por eventos:</b> cuenta la actividad y anuncia cuándo un cliente pasa a ser frecuente. La regla (por ejemplo, sesiones en 30 días) es configurable.</li>
+<li><b>Modelo de lectura:</b> vista materializada de los últimos días en Cosmos DB, propiedad del servicio de Movimientos.</li>
+<li><b>Cache-Aside:</b> consulta primero Redis, luego el modelo de lectura y por último el Core.</li>
+<li><b>Precalentamiento:</b> al anunciarse el cambio o iniciar sesión, el primer pantallazo ya está listo.</li>
+</ul>
+<p>El Core es siempre la fuente de verdad: se muestra la hora de la última actualización y se refresca antes de mover dinero. Si el Core está lento, los clientes frecuentes siguen viendo su historial reciente.</p>
+<h3>Transferencias internas (D10)</h3>
+<p>Entre cuentas propias, dentro del Core: validación de límites, débito y crédito y evento. Es una variante corta de la transferencia interbancaria: se completa de forma síncrona y no toca la red interbancaria.</p>
+<h3>Transferencias interbancarias (D10)</h3>
+<p>Una transferencia toca varios sistemas. Si algo falla a medias, el dinero no puede perderse ni duplicarse; el cliente ve un estado honesto (pendiente, completada, fallida) en lugar de esperar sin saber.</p>
+<ul>
+<li>La app envía la orden con una <b>clave de idempotencia</b>: tocar dos veces no envía dos veces. Se exige un paso adicional para montos altos o beneficiarios nuevos.</li>
+<li>El servicio guarda la orden como pendiente y el evento en la misma transacción local (<b>outbox</b>) y responde 202 con una dirección de estado.</li>
+<li>Una <b>saga orquestada</b> reserva y debita en el Core, envía a la red interbancaria y espera la confirmación. Ante fallas o vencimientos reintenta con espera creciente y luego compensa (libera la reserva o revierte el débito).</li>
+<li>Una <b>conciliación</b> programada compara con el Core y los reportes de liquidación; los casos sin resolver van a una cola de operaciones manuales.</li>
+<li>Los eventos alimentan notificaciones, el modelo de lectura y la auditoría.</li>
+</ul>
+<p><b>Por qué una saga y no una transacción distribuida:</b> el Core y la red externa no admiten transacciones compartidas, y bloquear entre sistemas reduce la disponibilidad.</p>
+</div>
+<img class="fig" style="height:100mm;margin-top:2mm" src="svg/05c-dynamic-transfer.svg">
+<div class="note" style="margin-top:.5mm"><b>Diagrama dinámico de la transferencia interbancaria</b>: pasos numerados en orden; el paso 5 y siguientes se omiten en una transferencia entre cuentas propias.</div>
+<div class="foot"><span>BP · Sistema de Banca por Internet · Procesos: Consulta y Transferencias</span><span>10 / 15</span></div></section><section class="page p " data-n="11">
+<h2>Auditoría, Notificaciones y Seguridad</h2>
+<div class="cols">
+<h3>Auditoría (D11)</h3>
+<p>Cada acción del cliente queda registrada de forma que nadie, ni un administrador, pueda alterarla. Ante un regulador, un fraude o una disputa hay una respuesta confiable, y el registro no hace más lento al cliente.</p>
+<p>Cada servicio emite eventos de auditoría (quién, qué, cuándo, canal, resultado) mediante <i>outbox</i> hacia el tema <b>audit-events</b>. El Servicio de Auditoría los valida y los escribe en <b>tablas de libro mayor</b> de Azure SQL (solo anexar, con verificación criptográfica) y en un <b>archivo inmutable</b> con resúmenes firmados. La consulta es de solo lectura, por rol, y cada consulta queda auditada. Los campos sensibles se minimizan para conciliar inmutabilidad con la ley de datos personales.</p>
+<p class="note">No se usa Event Sourcing completo: el Core es la fuente de verdad de los saldos y añadiría complejidad sin beneficio proporcional. Puede revisarse si el banco quiere historial de dominio reproducible.</p>
+<h3>Notificaciones (D9, D14)</h3>
+<p>La norma exige avisar cada movimiento. El Servicio de Notificaciones lee los eventos de transferencia y de onboarding mediante <b>su propia suscripción de Azure Service Bus, que actúa como su cola de solicitudes</b>: si el servicio o un proveedor cae, los mensajes esperan y se reintentan; los que fallan repetidamente van a una cola de mensajes fallidos y se alerta a operaciones.</p>
+<ul>
+<li><b>Canales:</b> SMS con dos proveedores (conmutación por falla con corte de circuito) y correo electrónico, con patrón Strategy y cadena de respaldo. Push queda diferido.</li>
+<li>Deduplicación por identificador de evento, mensajes con datos enmascarados (últimos 4 dígitos) y sin códigos de un solo uso.</li>
+<li>Costo: el SMS se cobra por mensaje; las reglas de canal las acuerdan Producto y Cumplimiento.</li>
+</ul>
+</div>
+<h3>Seguridad (D16)</h3>
+<table class="dt">
+<tr><th style="width:17%">Capa</th><th>Controles</th></tr>
+<tr><td><b>OWASP</b></td><td>Top 10 web y API Security Top 10: autorización a nivel de objeto en cada servicio, límites de tasa, validación de esquema OpenAPI, protección XSS de Angular con CSP estricta, defensa CSRF. <b>ASVS</b> para web y API y <b>MASVS</b> para el móvil (pinning de certificados, detección de root y depuración, atestación de la app, ofuscación).</td></tr>
+<tr><td><b>WAF y borde</b></td><td>Azure Front Door con WAF (reglas OWASP, control de bots y de tasa), protección DDoS, TLS 1.2 o superior.</td></tr>
+<tr><td><b>Identidad</b></td><td>OAuth 2.0 con PKCE, MFA y paso adicional por riesgo, tokens de vida corta con rotación, llave de dispositivo. Personal: acceso con Entra ID, acceso administrativo justo a tiempo.</td></tr>
+<tr><td><b>Red y cargas</b></td><td>Redes privadas, endpoints privados a bases de datos, mTLS entre servicios, identidades administradas, imágenes firmadas y escaneadas, sin IP públicas en servicios.</td></tr>
+<tr><td><b>Datos y llaves</b></td><td>Cifrado en reposo con llaves administradas por el banco (Managed HSM), tokenización de números sensibles, secretos en Key Vault.</td></tr>
+<tr><td><b>Antifraude y respuesta</b></td><td>Límites por monto y velocidad, espera para beneficiarios nuevos, alertas al cliente; ciclo de desarrollo seguro (modelado de amenazas, SAST, DAST, dependencias, pruebas de penetración); Defender y Sentinel para detección y respuesta a incidentes.</td></tr>
+</table>
+<div class="foot"><span>BP · Sistema de Banca por Internet · Auditoría, Notificaciones y Seguridad</span><span>11 / 15</span></div></section><section class="page p " data-n="12">
+<h2>Regulaciones, Resiliencia y monitoreo, Costos</h2>
+<h3>Regulaciones y cumplimiento (D19)</h3>
+<div class="warn"><b>Importante:</b> resumen a partir de fuentes públicas; los textos vigentes deben confirmarse con Legal y Cumplimiento antes de la entrega definitiva.</div>
+<table class="dt">
+<tr><th style="width:24%">Norma</th><th style="width:34%">Qué exige</th><th>Cómo responde el diseño</th></tr>
+<tr><td><b>Ley Orgánica de Protección de Datos Personales (LOPDP)</b></td><td>Consentimiento, finalidad, minimización, seguridad, derechos del titular, cuidado de datos sensibles (biometría), notificación de brechas, condiciones para la transferencia internacional</td><td>Consentimiento registrado; datos mínimos y tokenizados; llaves del banco; proceso para solicitudes de titulares (seudonimización frente a la auditoría inmutable); cláusulas, consentimiento y registro para alojamiento y proveedores en el exterior; delegado de protección de datos</td></tr>
+<tr><td><b>Ley Orgánica para el Fortalecimiento de la Ciberseguridad</b> (publicada el 22 de mayo de 2026, según la fuente consultada)</td><td>Marcos de ciberseguridad, mitigación de amenazas, respuesta y reporte de incidentes</td><td>Seguridad por capas, monitoreo continuo, plan de respuesta a incidentes con aviso al regulador, pruebas de penetración y simulacros de DR</td></tr>
+<tr><td><b>Superintendencia de Bancos, resolución SB-2021-2126</b> (riesgo operativo)</td><td>Monitoreo continuo de seguridad de TI, alta disponibilidad, recuperación ante desastres y continuidad</td><td>Objetivo 99,95 %, tres zonas más región de recuperación, RPO y RTO definidos, simulacros, observabilidad con SLO</td></tr>
+<tr><td><b>Codificación de la Junta de Política y Regulación Financiera</b></td><td>Estabilidad y requisitos técnicos, incluida la gestión de terceros y de la nube</td><td>Debida diligencia del proveedor (SOC 2, ISO 27001), derechos de auditoría, plan de salida, diseño portable, registro de riesgos de terceros</td></tr>
+<tr><td><b>Prevención de lavado de activos (UAFE) y KYC</b></td><td>Conocer al cliente, conservar registros, monitorear y reportar</td><td>Verificación de identidad con documento y prueba de vida, auditoría inmutable, reportes por umbral y patrón</td></tr>
+</table>
+<h3>Resiliencia y monitoreo (D15, D17)</h3>
+<div class="cols">
+<p><b>Alta disponibilidad.</b> Tres zonas en la región primaria: gateway, clúster con nodos en zonas y datos zona-redundantes. Un fallo de un centro de datos no dispara conmutación regional. <b>Recuperación.</b> Espera en caliente en North Central US con replicación continua y cómputo reducido que sube al conmutar; conmutación decidida por el comandante de incidentes según un manual, para evitar conmutaciones por errores transitorios; simulacros al menos dos veces al año.</p>
+<p><b>Tolerancia a fallas.</b> Tiempos de espera en cada llamada, reintentos con espera creciente solo en operaciones idempotentes, corte de circuito, aislamiento entre dependencias, límites de tasa, degradación elegante (historial en caché si el Core falla) y consumidores idempotentes. <b>Auto-reparación.</b> Pruebas de vida y preparación, reemplazo automático de nodos, escalado por carga y por cola, infraestructura como código y despliegues con reversión automática.</p>
+<p><b>Monitoreo.</b> Instrumentación OpenTelemetry hacia Azure Monitor y Application Insights: registros, métricas y trazas correlacionadas de extremo a extremo; indicadores de negocio (éxito de transferencias, entrega de notificaciones, embudo de onboarding); alertas por consumo del presupuesto de errores de los SLO; pruebas sintéticas desde fuera; paneles y manuales de operación.</p>
+</div>
+<h3>Costos (D18)</h3>
+<table class="dt">
+<tr><th style="width:22%">Componente</th><th style="width:44%">Configuración supuesta</th><th style="width:11%">Estado</th><th>US$ por mes</th></tr>
+<tr><td>API Management Premium</td><td>3 unidades (2 primaria y 1 DR) a US$ 2 795</td><td>Verificado</td><td>8 385</td></tr>
+<tr><td>Cómputo de contenedores</td><td>9 nodos a US$ 168 y 2 clústeres a US$ 73</td><td>Verificado</td><td>1 657</td></tr>
+<tr><td>Azure SQL Business Critical</td><td>8 vCore × 2 réplicas y almacenamiento</td><td>Verificado</td><td>≈ 4 390</td></tr>
+<tr><td>Cosmos DB, Redis, Service Bus</td><td>10 000 RU/s en 2 regiones; Redis P1 × 2; Service Bus × 2</td><td>Verificado</td><td>≈ 3 400 a 4 000</td></tr>
+<tr><td>Managed HSM</td><td>1 pool por región a US$ 2 336</td><td>Verificado</td><td>4 672</td></tr>
+<tr><td>Front Door y tráfico</td><td>Base US$ 330 y ≈ 3 TB de salida al mes</td><td>Parcial</td><td>580 a 1 000</td></tr>
+<tr><td>Observabilidad y seguridad</td><td>20 GB/día de registros, 5 GB/día a Sentinel, Defender</td><td>Parcial</td><td>3 200 a 4 300</td></tr>
+<tr><td>Almacenamiento, respaldos y tráfico entre regiones</td><td>Archivo inmutable, respaldos, replicación</td><td>Parcial</td><td>500 a 1 500</td></tr>
+<tr><td>Verificación de identidad</td><td>≈ 3 000 altas al mes × US$ 1 a 2 (supuesto)</td><td>Estimado</td><td>3 000 a 6 000</td></tr>
+<tr><td>SMS y correo</td><td>≈ 15 % de los movimientos por SMS × US$ 0,03 (supuesto)</td><td>Estimado</td><td>3 000 a 9 000</td></tr>
+<tr><td><b>Total aproximado</b></td><td>Precios de lista, ±30 %, sin personal; ≈ US$ 0,11 a 0,15 por usuario activo mensual</td><td></td><td><b>32 000 a 46 000</b></td></tr>
+</table>
+<p class="note">Precios unitarios verificados en la API pública de precios de Azure (South Central US, 19 y 20 de septiembre de 2026). <b>Verificado:</b> precio unitario comprobado. <b>Parcial:</b> precio comprobado con volumen supuesto. <b>Estimado:</b> no está en la API y requiere cotización. <b>Los SMS son el costo más sensible:</b> enviar un SMS por cada movimiento (≈ 1,2 millones al mes) sumaría unos US$ 30 mil al mes; la regla de canales se cierra con Producto y Cumplimiento. Cada precio y su consulta están en cost-validation.md del repositorio. Palancas: reservas de 1 a 3 años, SQL de propósito general en lugar de Business Critical, DR mínimo, caché que reduce llamadas al Core, reglas que limitan el SMS y muestreo de registros.</p>
+<div class="foot"><span>BP · Sistema de Banca por Internet · Regulaciones, Resiliencia y Costos</span><span>12 / 15</span></div></section><section class="page p " data-n="13">
+<h2>Plan de entregas y evolución</h2>
+<p>Esta arquitectura es el destino. No se construye entera antes de que el primer cliente la vea: se llega en cuatro etapas y cada una debe probar algo antes de pagar la siguiente. El gasto y el riesgo crecen junto con la demanda comprobada (D20).</p>
+<table>
+<tr><th style="width:12%">Etapa</th><th style="width:20%">Técnica ágil y de pretotipado</th><th style="width:44%">Alcance</th><th>Costo indicativo (US$/mes)</th></tr>
+<tr><td><b>1. Pretotipo</b></td><td><i>Fake Door</i> (botón de transferencias que mide intención y responde «próximamente»), <i>Pinocchio</i> (app navegable), <i>Mechanical Turk</i> (personal hace a mano la revisión)</td><td>App y SPA sobre el gateway hacia endpoints simulados generados desde los contratos OpenAPI; verificación de identidad en el entorno de pruebas del proveedor; banderas de funcionalidad y analítica. Sin Core, sin datos reales</td><td>0,5 a 1,5 mil</td></tr>
+<tr><td><b>2. MVP de solo lectura</b></td><td>Producto mínimo viable: valor real con bajo riesgo</td><td>Perfil y Movimientos con arquitectura hexagonal (dominio aislado del adaptador del Core); integración real con Core y servidor de autorización; auditoría básica; contenedores en un clúster pequeño</td><td>3 a 6 mil</td></tr>
+<tr><td><b>3. Transaccional</b></td><td>Expansión iterativa: primero cuentas propias, luego interbancarias, por cohortes y con banderas</td><td>Transferencias (saga, idempotencia, outbox), Riesgo y Límites, Notificaciones (SMS y correo), Auditoría, Service Bus, onboarding real, paso adicional de autenticación</td><td>15 a 23 mil (incluye proveedores variables)</td></tr>
+<tr><td><b>4. Escala empresarial</b></td><td>Endurecimiento según carga medida y exigencias del regulador</td><td>Multirregión con Front Door, DR en espera con simulacros, datos zona-redundantes, Cliente frecuente con Cosmos DB y Redis, auto-reparación avanzada, canal push opcional para reducir el SMS</td><td>32 a 46 mil</td></tr>
+</table>
+<h3>Puertas de decisión (hipótesis «al menos X % de Y hará Z»; umbrales de ejemplo por ajustar con Producto)</h3>
+<table class="dt">
+<tr><th style="width:15%">Puerta</th><th style="width:50%">Hipótesis</th><th>Si falla</th></tr>
+<tr><td>Fin etapa 1</td><td>≥ 70 % de los usuarios piloto completa el ingreso y el onboarding sin ayuda; ≥ 25 % toca el botón de transferencias en dos semanas</td><td>Cambiar el flujo o las funciones; no construir la integración</td></tr>
+<tr><td>Fin etapa 2</td><td>≥ 40 % del piloto entra cada semana a ver saldo o movimientos; p95 de lectura dentro del objetivo; sin incidentes graves en cuatro semanas</td><td>Corregir experiencia o rendimiento antes de agregar funciones</td></tr>
+<tr><td>Fin etapa 3</td><td>≥ 15 % de los activos completa una transferencia en el primer mes; éxito ≥ 99,5 %; entrega de notificaciones ≥ 99 %</td><td>Mantener las transferencias con bandera y arreglar la fiabilidad</td></tr>
+<tr><td>Fin etapa 4</td><td>SLO 99,95 % durante dos meses seguidos; simulacro de DR dentro de RTO y RPO</td><td>Seguir endureciendo antes de ampliar la comunicación</td></tr>
+</table>
+<h3>Umbral mínimo de resiliencia y deuda técnica aceptada</h3>
+<p><b>Umbral mínimo.</b> La etapa 1 no maneja datos reales. La etapa 2 exige una sola región zona-redundante, respaldos con restauración probada e infraestructura como código para construir el DR bajo demanda. <b>Antes de abrir transferencias más allá del piloto (etapa 3) hace falta DR en espera y un primer simulacro, o una aceptación de riesgo firmada por Riesgo y Cumplimiento.</b> La auditoría se mantiene con outbox y libro mayor, sin Event Sourcing.</p>
+<table class="dt">
+<tr><th style="width:38%">Deuda aceptada</th><th>Se paga cuando</th></tr>
+<tr><td>Endpoints simulados (etapa 1)</td><td>La etapa 2 los reemplaza y se eliminan</td></tr>
+<tr><td>Publicador de eventos en proceso (etapa 2)</td><td>La etapa 3 incorpora Service Bus tras el mismo puerto</td></tr>
+<tr><td>Región única con restauración (etapa 2)</td><td>DR en espera antes de abrir transferencias</td></tr>
+<tr><td>Sin modelo de clientes frecuentes hasta la etapa 4</td><td>Las mediciones muestran lentitud del Core</td></tr>
+<tr><td>Sin canal push</td><td>El costo del SMS o el uso lo justifican</td></tr>
+<tr><td>DR sin zonas de disponibilidad</td><td>Microsoft habilita zonas o se usa la región alterna</td></tr>
+</table>
+<p class="note">Contratos primero (OpenAPI), enrutamiento por ruta o cohorte en el gateway y arquitectura hexagonal hacen que una maqueta y un servicio real sean intercambiables, sin reescribir clientes. Una prueba de intención en un banco debe ser honesta («próximamente, cuéntanos si lo quieres») y revisada por Legal y Cumplimiento.</p>
+<div class="foot"><span>BP · Sistema de Banca por Internet · Plan de entregas y evolución</span><span>13 / 15</span></div></section><section class="page p xl" data-n="14"><h2>Alternativas evaluadas y descartadas (1 de 2)</h2><p class='note'>Cada decisión tiene al menos dos justificaciones teóricas y las opciones comparadas. El detalle completo de contexto, compromisos y alternativas está en el registro de decisiones del repositorio.</p><table class="dt"><tr><th style="width:4%">#</th><th style="width:9%">Decisión</th><th style="width:19%">Elegido</th><th style="width:21%">Justificación 1</th><th style="width:21%">Justificación 2</th><th>Alternativas descartadas</th></tr><tr><td><b>D1</b></td><td><b>Nube y regiones</b></td><td>Azure: South Central US (primaria, 3 zonas) y North Central US (DR, pareja oficial)</td><td>Latencia medida desde Ecuador de 103 y 104 ms; misma experiencia tras conmutar</td><td>Servicios gestionados de identidad, HA y seguridad; la pareja oficial simplifica la replicación</td><td>AWS (equivalente sin ventaja clara); Brasil Sur (181 ms); este y oeste de EE. UU. (DR a 133 ms); centro de datos propio</td></tr><tr><td><b>D2</b></td><td><b>SPA web</b></td><td>Angular con BFF, estáticos en CDN</td><td>Estructura única para varios equipos y seguridad integrada (XSS, CSP, XSRF)</td><td>El BFF mantiene los tokens en el servidor: sin robo por XSS; entrega estática barata y resiliente</td><td>React (menos estructura), Vue (ecosistema bancario menor), renderizado en servidor (sin sentido tras un login)</td></tr><tr><td><b>D3</b></td><td><b>App móvil</b></td><td>Flutter</td><td>Rendimiento y apariencia idénticos en iOS y Android, sin puente JavaScript</td><td>Una base de código y buen soporte de almacenamiento seguro, biometría y pinning</td><td>React Native (alternativa si el equipo es de JavaScript); nativo (doble costo)</td></tr><tr><td><b>D4</b></td><td><b>Flujo de autenticación</b></td><td>Código de autorización con PKCE (S256) para web (vía BFF) y móvil</td><td>Práctica vigente del estándar (OAuth 2.0 Security BCP y 2.1); protege ante intercepción del código</td><td>Las credenciales no pasan por la app; MFA y riesgo se centralizan en el servidor de autorización</td><td>Implícito; contraseña del propietario; credenciales de cliente solo entre servicios</td></tr><tr><td><b>D5</b></td><td><b>Onboarding facial</b></td><td>Proveedor SaaS tras un adaptador, orquestado por el Servicio de Onboarding</td><td>Evidencia KYC/AML (documento, vida, rostro) con certificaciones y defensa actual contra deepfakes</td><td>El adaptador permite cambiar de proveedor sin tocar la autenticación</td><td>Servicios solo de rostro (Azure Face, Rekognition); modelos propios (riesgo y costo)</td></tr><tr><td><b>D6</b></td><td><b>Ingreso posterior</b></td><td>Llave de dispositivo con huella (passkey), clave más OTP de respaldo, paso adicional por riesgo</td><td>La biometría no sale del teléfono; resistente al phishing</td><td>Ingreso rápido y menos restablecimientos de clave</td><td>Rostro en cada ingreso; solo OTP por SMS (SIM swap); token físico</td></tr><tr><td><b>D7</b></td><td><b>Capa de integración</b></td><td>Front Door con WAF, API Management y BFF web</td><td>Un solo punto de seguridad, límites y versionado antes del código de negocio</td><td>Servicios privados con mTLS; se agregan servicios sin cambiar las apps</td><td>Kong autogestionado; solo Application Gateway; sin gateway</td></tr><tr><td><b>D8</b></td><td><b>Servicios</b></td><td>Microservicios por capacidad: los 3 obligatorios más Notificación, Auditoría, Cliente frecuente, Onboarding y Riesgo</td><td>Aislamiento de fallas y escalado independiente</td><td>Extensible: nuevos productos consumen los mismos eventos, gateway e identidad</td><td>Monolito modular; solo 3 servicios; funciones por acción</td></tr><tr><td><b>D9</b></td><td><b>Comunicación</b></td><td>REST/HTTPS síncrono para consultas; eventos asíncronos en Service Bus (AMQP)</td><td>Desacople en el tiempo, reintentos y cola de fallidos</td><td>Semántica bancaria: duplicados, sesiones, transacciones</td><td>GraphQL o gRPC en el borde; Event Hubs; RabbitMQ autogestionado</td></tr><tr><td><b>D10</b></td><td><b>Transferencias</b></td><td>Saga orquestada con idempotencia, outbox y conciliación</td><td>El Core y la red no admiten transacción distribuida</td><td>Reintentos seguros: sin pagos dobles ni eventos perdidos</td><td>2PC o XA; saga coreografiada; llamada síncrona con reintento</td></tr></table><div class="foot"><span>BP · Sistema de Banca por Internet · Alternativas evaluadas y descartadas</span><span>14 / 15</span></div></section><section class="page p " data-n="15"><h2>Alternativas evaluadas y descartadas (2 de 2)</h2><table class="dt"><tr><th style="width:4%">#</th><th style="width:9%">Decisión</th><th style="width:19%">Elegido</th><th style="width:21%">Justificación 1</th><th style="width:21%">Justificación 2</th><th>Alternativas descartadas</th></tr><tr><td><b>D11</b></td><td><b>Auditoría</b></td><td>Eventos por outbox a libro mayor SQL (solo anexar) y archivo inmutable</td><td>Inmutable y verificable sin la complejidad de Event Sourcing global</td><td>Sin impacto en la latencia; separación de funciones y acceso auditado</td><td>Event Sourcing completo; logs como auditoría; CDC por base</td></tr><tr><td><b>D12</b></td><td><b>Clientes frecuentes</b></td><td>Cache-Aside (Redis), modelo de lectura (Cosmos DB) y clasificador por eventos</td><td>Menos llamadas al Core sobre una latencia de red de ≈ 103 ms</td><td>Degradación elegante si el Core falla; el clasificador solo cubre a quienes lo necesitan</td><td>Solo caché con TTL; replicar todo el Core</td></tr><tr><td><b>D13</b></td><td><b>Acceso a datos</b></td><td>Base por servicio: SQL, Cosmos DB, Redis, Blob</td><td>Autonomía y aislamiento de fallas</td><td>Almacén adecuado a cada carga; acceso privado y llaves del banco</td><td>Base compartida; un único NoSQL</td></tr><tr><td><b>D14</b></td><td><b>Notificaciones</b></td><td>SMS (2 proveedores) y correo con Strategy y respaldo; push diferido</td><td>Canales y proveedores redundantes: la notificación regulatoria es difícil de perder</td><td>Desacople por eventos; extensible a push sin cambiar el resto</td><td>Push como principal (diferido); pasarela SMS propia</td></tr><tr><td><b>D15</b></td><td><b>HA y DR</b></td><td>Región primaria con 3 zonas y espera en caliente en la pareja oficial</td><td>Las zonas resisten la caída de un centro de datos sin latencia extra</td><td>RPO ≤ 5 min y RTO ≤ 1 h con costo moderado</td><td>Una sola región; activo-activo; respaldo en frío</td></tr><tr><td><b>D16</b></td><td><b>Seguridad</b></td><td>Defensa en profundidad y confianza cero</td><td>Capas independientes: WAF, identidad, red privada, cifrado con llaves propias</td><td>Referencias reconocidas (OWASP ASVS y MASVS, ISO 27001)</td><td>Solo seguridad de perímetro; secretos en configuración</td></tr><tr><td><b>D17</b></td><td><b>Observabilidad</b></td><td>OpenTelemetry hacia Azure Monitor y Application Insights, con SLO</td><td>Trazas correlacionadas para diagnosticar rápido entre muchos servicios</td><td>Instrumentación neutral al proveedor</td><td>Prometheus y ELK autogestionados; APM de terceros</td></tr><tr><td><b>D18</b></td><td><b>Costos</b></td><td>Estimación por componente con precios verificados y palancas de ahorro</td><td>El gasto se liga al valor de la resiliencia</td><td>Los servicios gestionados reducen la operación</td><td>Hardware propio; no estimar</td></tr><tr><td><b>D19</b></td><td><b>Cumplimiento</b></td><td>Matriz norma a control con responsables de temas abiertos</td><td>Trazabilidad ante el regulador</td><td>Consentimiento, llaves del banco y minimización de datos</td><td>Híbrido con datos en el país si Legal lo exige</td></tr><tr><td><b>D20</b></td><td><b>Entrega</b></td><td>Cuatro etapas con pretotipado y puertas de decisión</td><td>Evidencia antes de invertir</td><td>El costo crece con la demanda</td><td>Entrega única; prototipo y reescritura</td></tr></table>
+<h3>Riesgos y supuestos por validar</h3>
+<table class="dt">
+<tr><th style="width:38%">Riesgo o supuesto</th><th style="width:36%">Mitigación</th><th>Responsable</th></tr>
+<tr><td>Alojar datos personales fuera de Ecuador (transferencia internacional)</td><td>Cláusulas, consentimiento, registro y llaves propias; alternativa híbrida con datos sensibles en el país</td><td>Legal, Delegado de datos</td></tr>
+<tr><td>Ubicación y protocolo reales del Core; disponibilidad del circuito privado</td><td>Adaptadores que aíslan el protocolo; confirmar en la etapa 2</td><td>Arquitectura, Infraestructura</td></tr>
+<tr><td>Capacidades del servidor de autorización (PKCE, PAR, passkeys, aprovisionamiento por API)</td><td>Alternativas documentadas: clave más OTP de app; controles compensatorios</td><td>Seguridad</td></tr>
+<tr><td>SDK Flutter y cobertura de documentos ecuatorianos del proveedor de verificación; acceso al servicio del registro civil</td><td>Selección por criterios; proveedor alterno tras el adaptador; envoltorio nativo</td><td>Producto, Cumplimiento</td></tr>
+<tr><td>Entrega de SMS en Ecuador y su costo; precios de referencia</td><td>Pruebas por operador, agregador local, cotizaciones</td><td>Producto, Compras</td></tr>
+<tr><td>Región de recuperación sin zonas de disponibilidad</td><td>Riesgo documentado; alternativa: este de EE. UU. como DR</td><td>Arquitectura</td></tr>
+</table>
+<p class="note"><b>Repositorio público.</b> Contiene este PDF, el registro completo de decisiones (D1 a D20), la validación de costos línea por línea (cost-validation.md), los 14 diagramas C4 editables (.drawio) y en imagen, el plan de solución y este esquema. La dirección se indica en los comentarios de la entrega.<br>
+<b>Referencias.</b> Modelo C4 (c4model.com), OAuth 2.0 Security BCP y perfil FAPI 2.0, OWASP ASVS, MASVS y API Security Top 10, Azure Retail Prices API, normas ecuatorianas citadas en la pág. 12.</p>
+<div class="foot"><span>BP · Sistema de Banca por Internet · Alternativas evaluadas y descartadas</span><span>15 / 15</span></div></section>
+<script>
+(function(){
+  var pages=[].slice.call(document.querySelectorAll('.page'));
+  var q=location.search.match(/[?&]p=(\d+)/);
+  var report=[];
+  pages.forEach(function(p){
+    var of=p.scrollHeight-p.clientHeight;
+    p.setAttribute('data-of',of);
+    if(of>1)report.push(p.getAttribute('data-n')+':'+of);
+  });
+  if(q){
+    pages.forEach(function(p){ if(p.getAttribute('data-n')!==q[1]) p.style.display='none'; });
+  }
+  var r=document.createElement('pre');r.id='rep';r.style.display='none';r.textContent='OVERFLOW '+(report.join(',')||'none');
+  document.body.appendChild(r);
+})();
+</script>
+</body></html>
