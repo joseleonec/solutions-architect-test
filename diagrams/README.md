@@ -36,3 +36,7 @@ The Code level (level 4) is not drawn; the component level is the deepest level 
 - Region: South Central US (primary, zone-redundant) with North Central US as warm-standby DR (D1); instance counts are illustrative.
 - The Core, Customer Detail system and Authorization Server are drawn as BP systems; in the Deployment diagram they are placed in a BP data center reached by ExpressRoute with a VPN backup. This location is an assumption to confirm.
 - The interbank network, civil registry, identity vendor, screening service and SMS/email providers are external and reached only through adapters.
+
+## Idioma
+
+Los archivos `.drawio` y las imágenes de `png/` están en **español**. Los originales en inglés se conservan en `en/`.
