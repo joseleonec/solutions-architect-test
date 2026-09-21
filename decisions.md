@@ -531,7 +531,7 @@ A transfer touches several systems (the Core, possibly another bank). If somethi
 1. The client sends the transfer with an `Idempotency-Key`; the gateway requires **step-up authentication** (D6) above a threshold or for a new beneficiary.
 2. The service validates limits and beneficiary, stores the transfer as `PENDING` and writes a `TransferRequested` event in the same local database transaction (outbox), then returns `202 Accepted` with the transfer ID and a status URL.
 3. The saga orchestrator executes the steps: reserve/debit the source account in the Core → for interbank, submit to the payment network → wait for confirmation or rejection (callback, polling or file) → mark `COMPLETED`.
-4. On failure or timeout, **compensating actions** run (release the reservation or reverse the debit) and the state becomes `FAILED` or `REVERSED`; every step is retried with exponential backoff behind a circuit breaker, and unrecoverable cases go to a manual-operations queue.
+4. On failure or timeout, **compensating actions** run (release the reservation or reverse the debit) and the state becomes `FAILED` or `REVERSED`; every step is retried with exponential backoff behind a circuit breaker, and unrecoverable cases go to a operaciones-manuales queue.
 5. A scheduled **reconciliation job** compares BP's records with the Core and the network's settlement reports to detect and fix divergences.
 6. Events (`TransferCompleted`, `TransferFailed`) drive notifications (D14), audit (D11) and read-model updates (D12).
 
