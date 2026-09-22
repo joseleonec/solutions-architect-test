@@ -73,7 +73,7 @@ tr:nth-child(even) td{background:#f4f7fb}
 <tr><th style="width:27%">Necesidad del negocio</th><th>Qué se espera</th></tr>
 <tr><td><b>Autoservicio seguro</b></td><td>Consultar y mover el dinero por cuenta propia, a cualquier hora, con la seguridad de un banco.</td></tr>
 <tr><td><b>Clientes nuevos sin agencia</b></td><td>Abrir una cuenta desde el celular con foto del rostro y cédula, con identidad verificada.</td></tr>
-<tr><td><b>Aprovechar lo que BP ya tiene</b></td><td>Usar la plataforma central, el sistema de datos adicionales y el inicio de sesión corporativo.</td></tr>
+<tr><td><b>Aprovechar lo que BP ya tiene</b></td><td>Usar la plataforma central, el sistema de datos adicionales y el servidor de inicio de sesión.</td></tr>
 <tr><td><b>Avisar cada movimiento</b></td><td>Informar al cliente por al menos dos medios, como exige la norma.</td></tr>
 <tr><td><b>Trazabilidad y cumplimiento</b></td><td>Registrar todo lo que hace el cliente y cumplir las normas de datos, seguridad y lavado de activos.</td></tr>
 <tr><td><b>Servicio siempre disponible</b></td><td>Que no se caiga, se recupere de un desastre y se vigile, con buena rapidez.</td></tr>
@@ -130,7 +130,7 @@ tr:nth-child(even) td{background:#f4f7fb}
 <ul>
 <li><b>País y regulación:</b> Ecuador. No hay región de nube local, por eso se midió la latencia y se justifican las regiones (pág. 8). El alojamiento fuera del país es una transferencia internacional de datos personales que exige consentimiento, cláusulas contractuales y registro; <b>debe confirmarse con Legal</b> (pág. 12).</li>
 <li><b>Tamaño:</b> banco mediano: 1 millón de clientes, <b>300 000 usuarios activos al mes</b>, 60 000 por día, 40 000 transferencias por día (≈ 1,2 millones de movimientos al mes) y pico de 5 transferencias por segundo.</li>
-<li><b>Sistemas de BP:</b> el Core expone REST; el Core, el sistema de detalle y el servidor de autorización están en un centro de datos de BP conectado por circuito privado (ubicación por confirmar). El servidor OAuth 2.0 corporativo soporta PKCE y aprovisionamiento por API.</li>
+<li><b>Sistemas de BP:</b> el Core expone REST; el Core, el sistema de detalle y el servidor de autorización están en un centro de datos de BP conectado por circuito privado (ubicación por confirmar). El servidor OAuth 2.0 (clientes y personal, por rol) soporta PKCE y aprovisionamiento por API.</li>
 <li><b>Fuera de alcance:</b> tarjetas y pagos con tarjeta. Notificaciones push: diferidas a una etapa posterior.</li>
 <li><b>Metas de calidad:</b> disponibilidad 99,95 %, RPO ≤ 5 min, RTO ≤ 1 h, lectura p95 menor a 500 ms dentro de la región más la latencia de red (≈ 103 ms).</li>
 <li><b>Precios y leyes:</b> los precios son de lista y las normas citadas se resumen de fuentes públicas; ambos requieren profundizar el análisis.</li>

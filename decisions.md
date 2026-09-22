@@ -185,7 +185,7 @@ Customers log in on the bank's own login service; the app never sees or stores t
 - *Business impact:* stronger security rules (extra verification, risk checks) can be changed in one place without releasing new apps; lower fraud and account-takeover risk; the same login for web and mobile.
 - *Trade-off:* the customer is briefly taken to a login screen and back, a small UX cost we accept for security.
 
-**Context.** The company already owns a product that implements OAuth 2.0 and can be configured for this purpose, so BP does not build an authorization server. The task here is to choose and configure the right flow for each client and to define the token model. The mobile app is a **public client** (it cannot keep a secret). The web channel uses a BFF (D2), which is a **confidential client** (it can).
+**Context.** The company already owns a product that implements OAuth 2.0 and can be configured for this purpose, so BP does not build an authorization server. The task here is to choose and configure the right flow for each client and to define the token model. The mobile app is a **public client** (it cannot keep a secret). The web channel uses a BFF (D2), which is a **confidential client** (it can). The same authorization server also signs in BP staff for the back-office portal, distinguished by scope/role (`acr` "staff") rather than by a separate login system; this is unrelated to the Entra ID / PIM access used for cloud infrastructure administration (D19 security table).
 
 **Options evaluated.**
 
