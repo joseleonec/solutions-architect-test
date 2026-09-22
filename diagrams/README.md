@@ -39,4 +39,4 @@ The Code level (level 4) is not drawn; the component level is the deepest level 
 
 ## Idioma
 
-Los archivos `.drawio` y las imágenes de `png/` están en **español**. Los originales en inglés se conservan en `en/`.
+Los archivos `.drawio` y las imágenes de `png/` están en **español**. Los originales en inglés se conservan en [`../other/diagrams-en/`](../other/diagrams-en/).
