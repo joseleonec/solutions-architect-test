@@ -67,8 +67,8 @@ tr:nth-child(even) td{background:#f4f7fb}
 <li><b>Cumplimiento y confianza.</b> La norma exige avisar cada movimiento y guardar un registro confiable de lo que ocurre; un canal propio lo hace siempre de la misma forma.</li>
 <li><b>Base para crecer.</b> Lo que se construye se reutiliza en nuevos productos, y la inversión aumenta solo si los clientes lo usan.</li>
 </ul>
-<p class="note">Beneficios cualitativos: sus cifras (ahorro por operación, altas nuevas) se definen con BP. El enunciado no describe el canal digital actual, por lo que esta sección debe validarse con el patrocinador.</p>
-<h3>Necesidades del negocio y requisitos planteados</h3>
+<p class="note" style="margin-bottom:0.6mm">Beneficios cualitativos: sus cifras (ahorro por operación, altas nuevas) se definen con BP. El enunciado no describe el canal digital actual, por lo que esta sección debe validarse con el patrocinador.</p>
+<h3 style="margin-top:1mm">Necesidades del negocio y requisitos planteados</h3>
 <table class="dt">
 <tr><th style="width:27%">Necesidad del negocio</th><th>Qué se espera</th></tr>
 <tr><td><b>Autoservicio seguro</b></td><td>Consultar y mover el dinero por cuenta propia, a cualquier hora, con la seguridad de un banco.</td></tr>
@@ -78,9 +78,9 @@ tr:nth-child(even) td{background:#f4f7fb}
 <tr><td><b>Trazabilidad y cumplimiento</b></td><td>Registrar todo lo que hace el cliente y cumplir las normas de datos, seguridad y lavado de activos.</td></tr>
 <tr><td><b>Servicio siempre disponible</b></td><td>Que no se caiga, se recupere de un desastre y se vigile, con buena rapidez.</td></tr>
 </table>
-<h3>Qué se propone</h3>
-<p><b>También se pide</b> una experiencia ágil para clientes frecuentes, una integración ampliable a nuevos servicios, un despliegue en la nube dentro de presupuesto, y este documento con diagramas y justificaciones.</p>
-<p>Una plataforma de banca por internet con una aplicación web (SPA) y una aplicación móvil multiplataforma, construida como microservicios detrás de una capa de integración con API Gateway. Se integra con la plataforma Core y el sistema complementario de clientes, permite transferencias internas e interbancarias, notifica cada movimiento por SMS y correo, y deja un registro de auditoría inmutable. Los clientes nuevos abren su cuenta desde el móvil con reconocimiento facial y verificación de documento, con validaciones de KYC (conocimiento del cliente) y AML (prevención de lavado de activos) antes de aprobar la cuenta. El ingreso usa el servidor de autorización OAuth 2.0 de BP con el flujo Authorization Code y PKCE recomendado por el estándar. Además, cuenta con redundancia en varias zonas de disponibilidad de Azure y una región de recuperación ante desastres, junto con observabilidad y monitoreo oportuno.</p>
+<h3 style="margin-top:0">Qué se propone</h3>
+<p><b>También se pide</b> agilidad para clientes frecuentes, integración ampliable, despliegue en la nube dentro de presupuesto, y este documento con diagramas y justificaciones.</p>
+<p>Una plataforma de banca por internet con una aplicación web (SPA) y una aplicación móvil multiplataforma, construida como microservicios detrás de una capa de integración con API Gateway. Se integra con la plataforma Core y el sistema complementario de clientes, permite transferencias internas e interbancarias, notifica cada movimiento por SMS y correo, y deja un registro de auditoría inmutable. Los clientes nuevos abren su cuenta desde el móvil con reconocimiento facial y verificación de documento, con validaciones de KYC (conocimiento del cliente) y AML (prevención de lavado de activos) antes de aprobar la cuenta. El ingreso usa el servidor de autorización OAuth 2.0 de BP con el flujo Authorization Code y PKCE recomendado por el estándar. Además, cuenta con redundancia en varias zonas de disponibilidad de Azure y una región de recuperación ante desastres, incluyendo herramientas de observabilidad con métricas, trazas y registros centralizados (Azure Monitor y OpenTelemetry) que permitan detectar y alertar de forma temprana ante fallas o degradación del servicio.</p>
 <h3>Decisiones clave <span class="note" style="font-weight:400">(detalle técnico en las págs. 3 a 8)</span></h3>
 <table class="dt">
 <tr><th style="width:16%">Tema</th><th style="width:46%">Decisión</th><th>Por qué</th></tr>
