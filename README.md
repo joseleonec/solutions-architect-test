@@ -6,7 +6,7 @@ Prueba técnica de Arquitecto de Soluciones: diseño de arquitectura para un sis
 
 ## Contenido del repositorio
 
-- **[`BP-Banca-por-Internet-Arquitectura.pdf`](BP-Banca-por-Internet-Arquitectura.pdf)** — el entregable principal. Documento de 15 páginas en español: resumen ejecutivo, alcance, diagramas C4 (contexto, contenedores, componentes, despliegue, dinámicos), procesos, seguridad, regulación, costos y plan de entregas.
+- **[`BP-Banca-por-Internet-Arquitectura-Jose-Luis-Leon.pdf`](BP-Banca-por-Internet-Arquitectura-Jose-Luis-Leon.pdf)** — el entregable principal. Documento de 15 páginas en español: resumen ejecutivo, alcance, diagramas C4 (contexto, contenedores, componentes, despliegue, dinámicos), procesos, seguridad, regulación, costos y plan de entregas.
 - **[`diagrams/`](diagrams/)** — los diagramas C4 en formato editable `.drawio` (draw.io / diagrams.net) y sus exportaciones PNG, en español. Ver [diagrams/README.md](diagrams/README.md) para el detalle de cada diagrama y las convenciones usadas.
 - **[`other/`](other/)** — material de respaldo, no exigido como entregable: el enunciado de la prueba, el registro de decisiones de arquitectura con sus justificaciones, la validación de costos con la API de precios de Azure, el borrador del índice del PDF, el plan de solución, y las herramientas usadas para generar el PDF (incluye los diagramas originales en inglés, en `other/diagrams-en/`).
 
